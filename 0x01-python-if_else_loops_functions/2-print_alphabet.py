@@ -3,5 +3,5 @@
 
 """Print the alphabet in lowercase, not followed by a new lin
 e."""
-for letter in range(97,123):
+for letter in range(97, 123):
     print("{}".format(chr(letter)), end="")
