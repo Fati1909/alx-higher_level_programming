@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-
+#  Prints the number of and the list of its arguments
 if __name__ == "__main__":
-    """print the sum, difference, multiple and quotient of 10 and 5."""
+    import sys
 
-    from calculator_1 import add, sub, mul, div
+    arg = sys.argv
+    size = len(arg) - 1
 
-    a = 10
-    b = 5
+    if size > 1:
+        print("{} arguments:".format(size))
+        for i in range(1, size + 1):
+            print("{}: {}".format(i, arg[i]))
 
-    print("{} + {} = {}".format(a, b, add(a, b)))
-    print("{} - {} = {}".format(a, b, sub(a, b)))
-    print("{} * {} = {}".format(a, b, mul(a, b)))
-    print("{} / {} = {}".format(a, b, div(a, b)))
+    elif size == 0:
+        print("{} arguments.".format(size))
+
+    else:
+        print("{} argument:".format(size))
+        print("{}: {}".format(size, arg[1]))
+
