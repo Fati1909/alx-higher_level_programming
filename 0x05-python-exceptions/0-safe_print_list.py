@@ -3,11 +3,11 @@
 def safe_print_list(my_list=[], x=0):
     """function that prints x elements of a list.
     Args:
-      my_list(list): list to print.
-      x(int): num of elements to print.
+      my_list (list): list to print.
+      x (int): num of elements to print.
 
     Returns:
-    num of elements printed.
+      num of elements printed.
     """
 
     ret = 0
@@ -17,5 +17,5 @@ def safe_print_list(my_list=[], x=0):
             ret += 1
         except IndexError:
             break
-        print("")
-        return(ret)
+    print("")
+    return (ret)
