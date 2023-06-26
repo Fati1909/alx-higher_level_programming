@@ -1,7 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/pythoni3
 
 def safe_print_list(my_list=[], x=0):
-    """function that prints x elements of a list."""
+    """function that prints x elements of a list.
+    Args:
+      my_list (list): list to print.
+      x (int): num of elements to print.
+
+    Returns:
+    num of elements printed.
+    """
 
     ret = 0
     for i in range(x):
