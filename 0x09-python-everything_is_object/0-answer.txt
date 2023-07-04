@@ -2,4 +2,4 @@
 
 """function to get the type of an object"""
 
-'type'
+type
