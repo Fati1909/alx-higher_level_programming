@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 4-print_square.py
+"""Defines a square-printing function."""
 
 def print_square(size):
     """function that prints a square with the character #."""
