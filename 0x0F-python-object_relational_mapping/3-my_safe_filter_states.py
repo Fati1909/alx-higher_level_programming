@@ -1,36 +1,17 @@
 #!/usr/bin/python3
-"""Module that lists all states from the hbtn_0e_0_usa database."""
-import sys
+"""  lists all states from the database hbtn_0e_0_usa """
 import MySQLdb
+import sys
+
 
 if __name__ == "__main__":
-    import MySQLdb
-    import sys
-
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name = sys.argv[4]
-
-    db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
-    )
-
-    cursor = db.cursor()
-
-    sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-
-    cursor.execute(sql_query, (state_name,))
-
-    rows = cursor.fetchall()
-
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cur = db.cursor()
+    match = sys.argv[4]
+    cur.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
+    rows = cur.fetchall()
     for row in rows:
         print(row)
-
-    cursor.close()
+    cur.close()
     db.close()
-
